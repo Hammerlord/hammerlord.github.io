@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>.NET Video Suite</title>
+
+  <link rel="stylesheet" type="text/css" href="css/main.css"/>
+  <link rel="stylesheet" type="text/css" href="css/custom.css"/>
+  <link rel="stylesheet" type="text/css" href="css/grid.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Open+Sans" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <div id="header-left">
+      <div class="banner-image">
+        <img src="images/logo.png"/>
+      </div>
+      <div class="banner-text">
+        <p class="name">annie ho</p>
+        <p class="no-padding">web design + development</p>
+      </div>
+    </div>
+    <nav id="header-right" class="flex">
+      <a href="portfolio.html#projects">projects</a> 
+      <span class="greytext">|</span> 
+      <a href="portfolio.html#illustration">illustration</a>
+      <span class="greytext">|</span> 
+      <a href="resume2.pdf" target="_blank">resume</a>
+      <span class="greytext">|</span> 
+      <span class="greytext">ho.annie.w@gmail.com</span>
+    </nav> 
+  </header>
+
+  <div class="border-left">
+    <h1 class="padleft">.NET (WPF) Development: Video Tools</h1>
+  </div>
+
+  <article class="content">
+    <p><strong>Tools:</strong> Microsoft Visual Studio, C#, XAML, Git, Adobe Illustrator</p>
+    <p><strong>Roles:</strong> Interaction programmer, QA
+
+    <p>In our term project for human-computer interaction (HCI) class, our group of five decided on a set of video tools. With command line libraries forming our backend, we created functional interface prototypes of the following:</p>
+     <ul>
+      <li>Video downloader</li>
+      <li>Slicer (cut out a segment of footage)</li>
+      <li>Cropper (reduce video dimensions)</li>
+    </ul>
+
+    <p>I had never used Visual Studio or written C#/XAML before, but I found it similar to the Java/XML setup of Android Studio, so it wasn't difficult for me to get started. My groupmate Alex (veridiam @ GitHub, bless him) implemented most of the editing tool functionalities, while most of my work (Hammerlord @ GitHub) was on the downloader and widget interactions.</p>
+    <p><a class="red-border-link" href="https://github.com/veridiam/BitsPlease" target="_blank">GitHub Repository</a></p>
+    <section>
+      <h2>Libraries used</h2>
+      <p>We used the following command line libraries for our backend:
+        <ul>
+          <li><a class="red-link" href="https://rg3.github.io/youtube-dl/" target="_blank">Youtube-dl</a> for downloading URLs as video and/or audio files</li>
+          <li><a class="red-link" href="https://www.ffmpeg.org/" target="_blank">FFmpeg</a> for video playback and editing capabilities</li>
+        </ul>
+      <p>Our project would map input arguments and execution to user-friendly graphical interfaces. For example, where a user might input to Youtube-dl:
+        <pre>youtube-dl -f [Format Code] [URL] -o \[File Name]\</pre>
+        We would hide the query generation and have custom field widgets for each of the arguments.
+      </p>  
+    </section>  
+    <section>
+      <h2>Downloader</h2>
+      <h3>Initial Data Retrieval</h3>
+      <p>When the user inputs a valid URL, the downloader retrieves details such as available dimensions, file extensions, and a preview thumbnail.</p>
+      <figure>
+        <div class="col-1-2 centre">
+          <img src="images/videotools/downloader1.png"/>
+          <figcaption>Entering a valid URL runs a script</figcaption>
+        </div>
+        <div class="col-1-2 centre">
+          <img src="images/videotools/downloader2.png"/>
+          <figcaption>Results of the script</figcaption>
+        </div>
+      </figure>
+
+      <p>Normally, the information is displayed as a string or block of text in the command line interface. I wrote a parser to convert that information into selectable items on the Video Options and Audio Qualities views. Fortunately, I could at least add an event handler to the framework's <code>Process</code> class, which allowed me to get the information line by line instead of having it all spit out at once.</p>
+      <p>I put each valid video option into a class <code>VideoOutput</code> with properties such as FormatCode, Extension, and Resolution. Then it was straightforward to access the selected item's data or map data to the Video Quality columns.</p>
+      <h3>Audio Only</h3>
+      <p>Youtube-dl offered audio options along with the other video options, but those files had nonstandard formats and weren't always playable. I changed the acquisition to an audio rip, where Youtube-dl would download the video and convert its audio to a chosen option: mp3, ogg, wav, etc.</p>
+      <figure>
+        <img src="images/videotools/audioonly.png"/>
+        <figcaption>Audio only mode</figcaption>
+      </figure>
+      <h3>Download!</h3>
+      <p>The application generates a query behind the scenes based on the user's input. From there, it's a matter of choosing a file name and hitting Save.</p>
+      <figure>
+        <div class="col-1-3 centre">
+          <img border="1" src="images/videotools/download1.png"/>
+          <figcaption>
+            Save
+          </figcaption>
+        </div>
+        <div class="col-1-3 centre">
+          <img border="1" src="images/videotools/download2.png"/>
+          <figcaption>
+            Download
+          </figcaption>
+        </div>
+        <div class="col-1-3 centre">
+          <img border="1" src="images/videotools/download3.png"/>
+          <figcaption>
+            Enjoy
+          </figcaption>
+        </div>
+      </figure>
+    </section>  
+
+    <section>
+      <h2>QA</h2>
+      <p>As the user testing date drew near, I identified and fixed several bugs to clean up the functionality of our project. Some examples:</p>
+      <ul>
+        <li><strong>Problem:</strong> There was significant audio stutter in the Slicer playback. <br> The playback seeker widget had a rapid, circular update cycle where playback was affecting its position which affected playback. I set the event to the much less frequent <code>Thumb.DragCompleted</code>.</li>
+        <li><strong>Problem:</strong> The Cropper selection tool would fold on itself and disappear at smaller than 50 pixels. <br> There was a MinWidth/Height constraint on the XAML which caused the widget to misbehave at that size. After removing that and ferrying the grid handles functionality into reusable class methods, I programmatically set a 10 pixel minimum height/width to combat the disappearing.</li>
+        <li><strong>Problem:</strong> The Cropper would crash when the tool touched the edges. <br>This was due to negative geometry on the viewport mask, so I set constraints to prevent it.</li>
+    </section>
+
+    <section>
+      <h2>Wireframes</h2>
+      <p>Early on, I made wireframes: low fidelity sketches to quickly communicate layout.</p>
+      <figure>
+        <div class="col-1-3">
+          <img border="1" src="images/videotools/Wireframes-02.jpg"/>
+        </div>
+        <div class="col-1-3">
+          <img border="1" src="images/videotools/Wireframes-04.jpg"/>
+        </div>
+        <div class="col-1-3">
+          <img border="1" src="images/videotools/Wireframes-05.jpg"/>
+        </div>
+      </figure>
+      <p>I also had a foray into a potential colour scheme. As you can probably tell, we chose not to go with it.</p>
+      <figure>
+        <div class="col-1-2">
+          <img src="images/videotools/Downloader-02.jpg"/>
+        </div>
+        <div class="col-1-2">
+          <img src="images/videotools/Colour scheme-02.jpg"/>
+        </div>
+      </figure>
+      <p>Alex argued for a native OS look, which would:
+        <ul>
+          <li>Mesh better with the usage of the Windows file system</li>
+          <li>Display any contrast options that the user might have set</li>
+          <li>Be more familiar-looking to Windows users who were new to video editing tools</li>
+        </ul>  
+      </p>
+    </section>  
+
+    <section>
+      <h2>Challenges</h2>
+      <ul>
+        <li><strong>Time</strong></li>
+        <li>The day before it was due, Alex said to me, "Hey, I'm going to ruin your squeakily clean encapsulated code." (Well, my code wasn't that clean or that squeaky, but it was a kind comment.) I said, "No worries." Kludge ahoy! Agile is hysterical. Here's the commit that stares you in the face when you look at the final release build: <code>Dirty fix for parse timecode update when clicking away.</code> I wrote it, so I bask in its filth.</li>
+        <li>The native OS look meant leaving most of the XAML to its defaults. With my focus directed on making our tools run smoothly, it was hard to make the interface look appealing.</li>        
+      </ul>
+    </section>
+
+  </article>
+
+  <aside>
+    <h3>Other Projects</h3>
+    <ul>
+      <li>
+        <a href="geppetto.html">Web Development: Gumstix Geppetto</a>
+      </li>
+      <li>
+        <a href="grazeful.html">Mobile Game Development: Grazeful</a>
+      </li>
+      <li>
+        <a href="rollbot.html">Python Discord Bot: Rollbot</a>
+      </li>
+      <li>
+        <a href="farlands.html">2D Game Sprites + Animation: Shadow of the Farlands</a>
+      </li>
+    </ul>  
+  </aside>
+
+  <footer>
+    <a class="white-link" href="#">Return to Top</a>
+  </footer>
+
+</body>
+</html>

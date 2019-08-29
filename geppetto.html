@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Web Development: Geppetto</title>
+
+  <link rel="stylesheet" type="text/css" href="css/main.css"/>
+  <link rel="stylesheet" type="text/css" href="css/custom.css"/>
+  <link rel="stylesheet" type="text/css" href="css/grid.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Open+Sans" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <div id="header-left">
+      <div class="banner-image">
+        <img src="images/logo.png"/>
+      </div>
+      <div class="banner-text">
+        <p class="name">annie ho</p>
+        <p class="no-padding">web design + development</p>
+      </div>
+    </div>
+    <nav id="header-right" class="flex">
+      <a href="portfolio.html#projects">projects</a> 
+      <span class="greytext">|</span> 
+      <a href="portfolio.html#illustration">illustration</a>
+      <span class="greytext">|</span> 
+      <a href="resume2.pdf" target="_blank">resume</a>
+      <span class="greytext">|</span> 
+      <span class="greytext">ho.annie.w@gmail.com</span>
+    </nav> 
+  </header>
+
+  <div class="border-left">
+    <h1 class="padleft">Web Development: Geppetto</h1>
+  </div> 
+
+  <article class="content">
+    <p><strong>Tools:</strong> HTML + CSS (LESS), JavaScript (ES6, React, TypeScript, JQuery, Backbone.js), PHP (Symfony)</p>
+    <p><strong>Responsibilities:</strong> Design and develop features to serve the user experience and improve funnel metrics; write unit tests; QA and fix bugs</p>
+    <p>Geppetto is Gumstix's web app for creating circuit boards. It aims to hide the technical details of electronic design by
+    presenting a user-friendly interface with drag-and-drop components. The final product that users receive is a physical circuit board based on their in-app design.</p>
+    <section>
+      <h2>A Few Notable Features</h2>
+      <p>The following features were re/designed and coded end-to-end by me (with blessings from the higher-ups).</p>
+      <h3>Board Builder</h3>
+      <p>Programmatically generates a Geppetto board based on the user's functional requirements. The Board Builder automates the application workflow, offering a fast path to a finalized design. So far, over 4,000 designs have been generated, and the Builder has improved sign-up rates by approximately 20%. Its main draw is in introducing new users to Geppetto and showing, quickly, what Geppetto can produce.</p>
+      <figure class="centre">
+        <img src="images/geppetto/board-builder.png" alt="Board builder"/>
+      </figure>
+      <p>Users select their desired components from a list of suggestions. The Board Builder will check data requirements and compatibility.
+        For example, in the above image, the Builder detected that Audio Codec was a requirement of Speaker.</p>
+      <p>On submission, Geppetto places components onto the board and establishes available connections.</p>
+      <figure class="centre">
+        <img src="images/geppetto/power-finder-dialog.png" alt="Power detected dialog"/>
+      </figure>
+      <p>This board is still incomplete (red) because it is missing power sources. Geppetto will detect this and offer an option to find power components.</p>
+      <figure class="centre">
+        <img src="images/geppetto/power-finder.png" alt="Power finder dialog"/>
+        <figcaption>The Power Finder suggests valid sets of power sources for the chosen components.</figcaption>
+      </figure>
+      <figure class="centre">
+        <img src="images/geppetto/board-built-3d.png" alt="Finished board"/>
+        <figcaption>Final generated board, including its 3D view</figcaption>
+      </figure>
+      <h3>Components Library</h3>
+      <p>I reworked the components library with two goals in mind:</p>
+      <ul>
+        <li>Reduce manual effort taken in navigating category shelves.</li>
+        <li>Reduce unnecessary screen real estate.</li>
+      </ul>
+      <figure>
+        <video width="720" height="480" controls>
+          <source src="images/geppetto/geppetto-panel.mp4" type="video/mp4">
+        </video>
+      </figure>
+      <p>The previous implementation used <a class="red-link" href="https://jqueryui.com/accordion/" target="_blank">JQuery UI Accordion,</a> which took up a lot of vertical space. When users wanted to open another shelf (such as COM Connectors), they had to scroll through the list of components and find it, every time. The new implementation is a custom React component (with a Backbone.View wrapper for interfacing with legacy code).</p>
+      <h3>Design Helper</h3>
+      <p>A tutorial tool that examines the user's design state, and informs them of errors. This feature is aimed at improving the Geppetto user funnel, where:</p>
+      <ul>
+        <li>Users can see exactly what is wrong with their design. For example, if one of their components is not connected, it will inform them which component it is.</li>
+        <li>Users are notified when their design is fully valid and can be ordered.</li>
+      </ul>
+      <figure class="centre">
+        <img src="images/geppetto/design-helper.png" alt="Design Helper"/>
+        <figcaption>The Design Helper shows which components have an issue, and what that issue is. Hovering the component name will cause
+        the corresponding component on the board to blink.</figcaption>
+      </figure>
+    </section>
+  </article>  
+
+  <aside>
+    <h3>Other Projects</h3>
+    <ul>
+      <li>
+        <a href="rollbot.html">Python Discord Bot: Rollbot</a>
+      </li>
+      <li>
+        <a href="grazeful.html">Mobile Game Development: Grazeful</a>
+      </li>
+      <li>
+        <a href="videosuite.html">.NET (WPF) Development: Simple Video Tools</a>
+      </li>
+      <li>
+        <a href="farlands.html">2D Game Sprites + Animation: Shadow of the Farlands</a>
+      </li>
+    </ul>  
+  </aside>
+
+  <footer>
+    <a class="white-link" href="#">Return to Top</a>
+  </footer>
+</body>
+</html>

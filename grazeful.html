@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Grazeful: Sheep Simulator</title>
+
+  <link rel="stylesheet" type="text/css" href="css/main.css"/>
+  <link rel="stylesheet" type="text/css" href="css/custom.css"/>
+  <link rel="stylesheet" type="text/css" href="css/grid.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Open+Sans" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <div id="header-left">
+      <div class="banner-image">
+        <img src="images/logo.png"/>
+      </div>
+      <div class="banner-text">
+        <p class="name">annie ho</p>
+        <p class="no-padding">web design + development</p>
+      </div>
+    </div>
+    <nav id="header-right" class="flex">
+      <a href="portfolio.html#projects">projects</a> 
+      <span class="greytext">|</span> 
+      <a href="portfolio.html#illustration">illustration</a>
+      <span class="greytext">|</span> 
+      <a href="resume2.pdf" target="_blank">resume</a>
+      <span class="greytext">|</span> 
+      <span class="greytext">ho.annie.w@gmail.com</span>
+    </nav> 
+  </header>
+
+  <div class="border-left">
+    <h1 class="padleft">Mobile Game Development</h1>
+  </div>
+  <div class="border-left-white">
+    <h2 class="padleft">Grazeful: Sheep Simulator</h2>
+  </div>    
+
+  <article class="content">
+    <p><strong>Tools:</strong> Android Studio, Photoshop, Wacom Graphire 4 tablet</p>
+    <p><strong>Roles:</strong> Java programming, art assets</p>
+    <figure>
+      <img src="images/grazeful/grazeful-logo.png" />
+    </figure>
+    <p>In mobile development class, I programmed a tamagotchi-like Android application and painted some of its visual assets. Grazeful: Sheep Simulator is a simple game where you care for a sheep by feeding, petting, and walking it. The goal is to achieve the highest level you can, but if the sheep starves, then it's game over.</p>
+
+    <section>
+      <h2>Feed Your Sheep</h2>
+      <p>Your sheep will get hungry as time goes on, indicated by the top health bar. Select your food by tapping one of the buttons. Then, tap the sheep to feed it.</p>
+
+      <figure class="flex">
+        <div class="col-1-2">
+          <img src="images/grazeful/feed1.png"/>
+        </div>
+        <div class="col-1-2">
+          <img src="images/grazeful/feed2.png"/>
+        </div>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Pet Your Sheep</h2>
+      <p>Petting your sheep periodically makes it happy. The happier it is, the more experience it gains from other activities. Its happiness is indicated by the sheep face icon.</p>
+      <figure>
+        <img src="images/grazeful/veryhappy.png"/>
+        <figcaption>This is a very happy sheep. The sheep won't always want to be petted, though. When petting is too frequent, it has lessened to no effect on happiness.</figcaption>
+      </figure>  
+    </section>
+
+    <section>
+      <h2>Randomized Food Spawn</h2>
+      <p>Every once in a while, a leaf or flower will grow on the field. You can collect it by tapping it. If you haven't collected any in a while, they'll build up until there's no more room.</p>
+      <figure>
+        <img src="images/grazeful/foodspawn.png"/>
+        <figcaption>Leaves and flowers randomly spawn in set locations, and cannot have overlapping spots. Flowers are rarer than leaves and offer a larger boost to fullness and happiness when eaten.</figcaption>
+      </figure>  
+    </section>
+
+    <section>
+      <h2>Walk Your Sheep</h2>
+      <p>When you move with the phone, the gyroscope sensor detects your acceleration and allows the app to enter walking mode. Your sheep will now hop across a scrolling field. Moving grants significant gameplay advantages:</p>
+      <ul>
+        <li>You automatically pick up any leaves or flowers that spawn.</li>
+        <li>Food spawns more frequently.</li>
+        <li>Your sheep gains happiness and experience as you move.</li>
+        <li>The faster you move, the larger of a benefit you gain with the above--up to a point.</li>
+      </ul>
+
+      <p>See how it works:</p>
+      <video width="720" height="480" controls>
+        <source src="images/grazeful/jumping.mp4" type="video/mp4">
+      </video>
+    </section>
+  </article>  
+
+  <aside>
+    <h3>Other Projects</h3>
+    <ul>
+      <li>
+        <a href="geppetto.html">Web Development: Gumstix Geppetto</a>
+      </li>
+      <li>
+        <a href="rollbot.html">Python Discord Bot: Rollbot</a>
+      </li>
+      <li>
+        <a href="videosuite.html">.NET (WPF) Development: Simple Video Tools</a>
+      </li>
+      <li>
+        <a href="farlands.html">2D Game Sprites + Animation: Shadow of the Farlands</a>
+      </li>
+    </ul>  
+  </aside>
+
+  <footer>
+    <a class="white-link" href="#">Return to Top</a>
+  </footer>
+  </body>
+  </html>

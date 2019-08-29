@@ -1,0 +1,199 @@
+@charset "utf-8";
+
+/* Red: #BE1E2D */
+
+body {
+	color: #666666;
+	letter-spacing: 0.03rem;
+	line-height: 2rem;
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+}
+
+article {
+	padding-bottom: 3rem;
+	display: inline-block;
+}
+
+header {
+	width: 100%;
+	display: flex;
+	display: -webkit-flex;
+	justify-content: space-between;
+	padding: 2rem 1rem;
+}
+
+header a, header span {
+	white-space: nowrap;
+}
+
+header a {
+	color: #888888;
+}
+
+aside a {
+	color: #AAAAAA;
+}
+
+header a:hover, aside a:hover {
+	color: #BE1E2D;
+}
+
+h1, h2, h3 {
+	font-family: 'Noto Sans', Arial, sans-serif;
+	font-weight: normal;
+	margin: 0;
+	padding-top: 0.5rem;
+}
+
+h1 {
+	font-size: 2.5rem;
+	padding-bottom: 1rem;
+	font-style: italic;
+	line-height: 2.7rem;
+	color: #999999;
+}
+
+h2 {
+	font-size: 2rem;
+	line-height: 2rem;
+	padding-bottom: 1rem;
+}
+
+h3 {
+	font-size: 1.7rem;
+	line-height: 2rem;
+}
+
+h4 {
+	margin: 0.5rem;
+}
+
+.content h3 {
+	padding-bottom: 1rem;
+}
+
+figure {
+	margin: 0;
+	text-align: center;
+	padding: 1rem 0;
+}
+
+figcaption {
+	margin-top: 1rem;
+	font-style: italic;
+}
+
+hr {
+	border-top: 1px solid #CCCCCC;
+	border-bottom: 0;
+	margin: 2rem 0;
+}
+
+img {
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+ul {
+	list-style-type: disc;
+}
+
+p {
+	padding: 0.5rem 0;
+	margin: 0 auto;
+	text-align: justify;
+}
+
+a, p {
+	font-size: 1rem;
+}
+
+a {
+	text-decoration: none;
+	color: #555555;
+}
+
+a:hover {
+	transition: 0.1s;
+	-webkit-transition: 0.1s;
+	color: #BE1E2D;
+}
+
+a.red-link, a.red-border-link {
+	color: #BE1E2D;
+}
+
+a.red-border-link {
+	border-bottom: 2px solid #BE1E2D;
+}
+
+a.white-link {
+	color: white;
+}
+
+a.white-link:hover {
+	color: rgba(255,255,255,0.8);
+}
+
+nav a, nav span {
+	text-align: center;
+	padding: 0 0.25rem;
+	line-height: 1.5rem;
+}
+
+code {
+	background-color: #EEEEEE;
+	padding: 0.25rem;
+	border-radius: 0.25rem;
+}
+
+pre {
+	overflow: auto;
+	padding: 1rem 2rem;
+	background-color: #F0F0F0;
+	border-radius: 0.25rem;
+}
+
+iframe {
+	border: 0;
+}
+
+em {
+	letter-spacing: 0.05rem;
+}
+
+footer {
+	background-color: #aaa;
+	text-align: center;
+}
+
+footer a {
+	display: block;
+}
+
+section {
+	padding: 1rem 0;
+}
+
+aside {
+	width: 20rem;
+	position: fixed;
+	display: inline-block;
+	border-left: 2px solid #CCCCCC;
+	padding-left: 2rem;
+	margin-left: 4rem;
+	float: right;
+	top: 10rem;
+	color: #BBBBBB;
+}
+
+aside ul {
+	list-style: none;
+	padding: 0;
+	line-height: 1.7rem;
+}
+
+aside li {
+	margin: 1rem 0;
+}

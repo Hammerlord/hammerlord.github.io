@@ -1,0 +1,156 @@
+html .mediumtext, html .mediumtext * {
+	font-size: 1.2rem;
+	letter-spacing: 0.1rem;
+}
+
+html .whitetext, html .whitetext * {
+	color: white;
+}
+
+html .greytext, html .greytext * {
+	color: #CCCCCC;
+}
+
+html .redtext, html .redtext * {
+	color: #BE1E2D;
+}
+
+html .centre {
+	text-align: center;
+	margin: 0 auto;
+}
+
+html .align-right {
+	text-align: right;
+}
+
+.content {
+	max-width: 55rem;
+	padding-top: 2rem;
+	padding-left: 4rem;
+	padding-right: 0.5rem;
+}
+
+.wrapper {
+	padding: 1rem;
+	margin: 0 auto;
+}
+
+.heading-space {
+	padding-top: 8rem;
+	padding-bottom: 3rem;
+}
+
+.vpad {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+.vpad-2 {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+.hpad-2 {
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+
+.wrapper-2 {
+	padding: 2rem;
+}
+
+.padtop-1 {
+	padding-top: 1rem;
+}
+
+.padleft {
+	padding-left: 3rem;
+}
+
+.border-left {
+	border-left: 10px solid #999999;
+}
+
+.border-left-white {
+	border-left: 10px solid white;
+}
+
+html .flex, 
+html .profile-flex {
+	display: flex;
+	display: -webkit-flex;
+	justify-content: space-between;
+}
+
+.container {
+	/* Remove inline block space */
+	font-size: 0;
+}
+
+/* Home projects */
+.col-project {
+	height: auto;
+	position: relative;
+}
+
+.inner-label {
+	padding-top: 1rem;
+}
+
+.lightgreybg {
+	background-color: #F1F1F1;
+}
+
+.greybg {
+	background-color: #999999;
+}
+
+.blackbg {
+	background-color: #333333;
+}
+
+.tag {
+	margin: 0 auto;
+	text-align: center;
+	font-style: italic;
+}
+
+.no-padding {
+	padding: 0;
+}
+
+.spacer {
+	padding: 2rem 0;
+}
+
+.stretch-img {
+	width: 100%;
+}
+
+.name {
+	color: #BE1E2D;
+	font-size: 3rem;
+	letter-spacing: 0.16rem;
+	padding: 0;
+	line-height: 3rem;
+}
+
+.gallery div {
+	vertical-align: bottom;
+	text-align: center;
+}
+
+.border {
+	border: 1px solid #CCCCCC;
+}
+
+.align-left {
+	text-align: left;
+}
+
+.gumstix-landing {
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
